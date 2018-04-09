@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeButtonColor : MonoBehaviour {
 
@@ -16,6 +17,11 @@ public class ChangeButtonColor : MonoBehaviour {
 
     public void ChangeColorOfButton(Renderer renderer)
     {
-        renderer.material.color = new Color(Random.Range(0, 255), Random.Range(0, 255), Random.Range(0, 255));
+        renderer.material.color = new Color(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f));
+    }
+
+    public void ChangeColorOfButton2(Image image)
+    {
+        image.color = new Color(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f));
     }
 }
