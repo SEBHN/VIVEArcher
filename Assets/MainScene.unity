@@ -258,8 +258,23 @@ Transform:
   - {fileID: 1502315223}
   - {fileID: 1908181090}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &499170905 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 120602, guid: 18d6bf9063dcb1842be63f411fd9fc26, type: 2}
+  m_PrefabInternal: {fileID: 2052340937}
+--- !u!114 &499170911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 499170905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6232534e95006242bac793c1143c93f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &700796227
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,68 +970,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4707453695283444, guid: e8917bff63660ae448913dcab1aa74fc,
     type: 2}
   m_PrefabInternal: {fileID: 1380008308}
---- !u!1 &1199974994
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1199974997}
-  - component: {fileID: 1199974996}
-  - component: {fileID: 1199974995}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1199974995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1199974994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &1199974996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1199974994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 5
---- !u!4 &1199974997
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1199974994}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!21 &1258172726
 Material:
   serializedVersion: 6
@@ -1259,15 +1212,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1167665016748538, guid: e8917bff63660ae448913dcab1aa74fc, type: 2}
+      propertyPath: m_Name
+      value: Cube UI Button Base (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 114184232985993620, guid: e8917bff63660ae448913dcab1aa74fc,
         type: 2}
       propertyPath: _manager
       value: 
       objectReference: {fileID: 732290366}
-    - target: {fileID: 1167665016748538, guid: e8917bff63660ae448913dcab1aa74fc, type: 2}
-      propertyPath: m_Name
-      value: Cube UI Button Base (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8917bff63660ae448913dcab1aa74fc, type: 2}
   m_IsPrefabParent: 0
@@ -1580,6 +1533,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114184232985993620, guid: e8917bff63660ae448913dcab1aa74fc,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 732290366}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8917bff63660ae448913dcab1aa74fc, type: 2}
   m_IsPrefabParent: 0
@@ -1730,7 +1688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37c2cf88f7c59f4c8cf5d3812568143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 5
+  index: 1
   origin: {fileID: 0}
 --- !u!1 &1862511507
 GameObject:
@@ -1953,6 +1911,10 @@ Prefab:
     - target: {fileID: 411020, guid: 18d6bf9063dcb1842be63f411fd9fc26, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013537662586, guid: 18d6bf9063dcb1842be63f411fd9fc26, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18d6bf9063dcb1842be63f411fd9fc26, type: 2}
