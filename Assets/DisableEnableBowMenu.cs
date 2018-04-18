@@ -16,6 +16,7 @@ public class DisableEnableBowMenu : MonoBehaviour {
         if (transform.rotation.eulerAngles.z > 90)
         {
             menu.SetActive(true);
+            Debug.Log("Bogen 90 Grad gedreht");
         }
         else
         {
