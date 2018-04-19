@@ -18,8 +18,8 @@ public class DisableEnableBowMenu : MonoBehaviour {
         bool bowHorizontalRight = transform.rotation.eulerAngles.z > 250 && transform.rotation.eulerAngles.z < 280;
 
         if (bowHorizontalLeft || bowHorizontalRight)
-        {
-           
+        {   
+            BowMenu.SetActive(true);          
             if (bowHorizontalRight && bowWasLeft)
             {
                 // transform position
@@ -37,8 +37,9 @@ public class DisableEnableBowMenu : MonoBehaviour {
 
         }
         else
-        {
+        {             
             DisableMenuAnimation.Invoke();
+            BowMenu.SetActive(false);
         }
 	}
 }
