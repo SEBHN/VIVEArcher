@@ -1,26 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DisableEnableBowMenu : MonoBehaviour {
 
-    public GameObject menu;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public UnityEvent ShowMenuAnimation;
+    public UnityEvent DisableMenuAnimation;
+    public GameObject BowMenu;
+    private bool bowWasLeft;
+    private bool bowWasRight;
+    
 	
 	// Update is called once per frame
 	void Update () {
-        if (transform.rotation.eulerAngles.z > 90)
+        bool bowHorizontalLeft = transform.rotation.eulerAngles.z > 70 && transform.rotation.eulerAngles.z < 100;
+        bool bowHorizontalRight = transform.rotation.eulerAngles.z > 250 && transform.rotation.eulerAngles.z < 280;
+
+        if (bowHorizontalLeft || bowHorizontalRight)
         {
-            menu.SetActive(true);
-            Debug.Log("Bogen 90 Grad gedreht");
+           
+            if (bowHorizontalRight && bowWasLeft)
+            {
+                // transform position
+              //  BowMenu.transform.Rotate(0f, 0f, 180f); // rotate z 180°
+               // BowMenu.transform.position = new Vector3(0, BowMenu.transform.position.y, BowMenu.transform.position.z);
+            }
+            else if(bowHorizontalLeft && bowWasRight)
+            {
+                // transform position
+            }
+
+            ShowMenuAnimation.Invoke();
+            bowWasLeft = bowHorizontalLeft;
+            bowWasRight = bowHorizontalRight;
+
         }
         else
         {
-            menu.SetActive(false);
+            DisableMenuAnimation.Invoke();
         }
 	}
 }
