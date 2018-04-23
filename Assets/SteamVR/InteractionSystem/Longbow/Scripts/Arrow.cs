@@ -152,7 +152,11 @@ namespace Valve.VR.InteractionSystem
 					{
 						collision.collider.gameObject.SendMessageUpwards( "ApplyDamage", SendMessageOptions.DontRequireReceiver );
 						gameObject.SendMessage( "HasAppliedDamage", SendMessageOptions.DontRequireReceiver );
-					}
+					    if (collision.gameObject.tag == "Enemy")
+					    {
+					        Destroy(collision.gameObject);
+					    }
+                    }
 				}
 
 				if ( hitBalloon )
@@ -175,6 +179,8 @@ namespace Valve.VR.InteractionSystem
 				{
 					Player.instance.PlayerShotSelf();
 				}
+
+			  
 			}
 		}
 
