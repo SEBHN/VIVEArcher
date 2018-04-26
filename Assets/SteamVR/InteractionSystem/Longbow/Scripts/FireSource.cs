@@ -77,7 +77,7 @@ namespace Valve.VR.InteractionSystem
 		{
 			if ( isBurning && canSpreadFromThisSource)
 			{
-                FireSource otherSource = other.GetComponent<FireSource>();
+                FireSourceSelect otherSource = other.GetComponent<FireSourceSelect>();
 
 			    if (otherSource == null)
 			    {
@@ -86,20 +86,30 @@ namespace Valve.VR.InteractionSystem
 			        canSpreadFromThisSource = false;
 			        StopBurning();
 			    }
-                else if (this.type == otherSource.type)
+			    else
 			    {
-			        other.SendMessageUpwards("FireExposure", SendMessageOptions.DontRequireReceiver);
+                    otherSource.SetActiveFireSource(type);
+			       // other.SendMessageUpwards("FireExposure", SendMessageOptions.DontRequireReceiver);
 			        coolDownStart = Time.time;
 			        canSpreadFromThisSource = false;
-                    StopBurning();
+			        StopBurning();
                 }
-                else if (this.type != otherSource.type)
-                { 
-                    if (otherSource.isBurning)
-                    {
-                        otherSource.StopBurning();
-                    }
-                }
+       //         else if (this.type == otherSource.type)
+                //{
+                //    other.SendMessageUpwards("FireExposure", SendMessageOptions.DontRequireReceiver);
+                //    other.enabled = true;
+                //    coolDownStart = Time.time;
+                //    canSpreadFromThisSource = false;
+                //             StopBurning();
+                //         }
+                //         else if (this.type != otherSource.type)
+                //         { 
+                //             if (otherSource.isBurning)
+                //             {
+                //                 otherSource.StopBurning();
+                //                // other.enabled = false;
+                //             }
+                //         }
 
             }
 		}

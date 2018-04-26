@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 198372935410880144}
   - component: {fileID: 199971250534419928}
   m_Layer: 0
-  m_Name: IceTiny
+  m_Name: IceFireTiny
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

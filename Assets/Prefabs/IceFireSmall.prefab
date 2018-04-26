@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 198906621665592434}
   - component: {fileID: 199941209627614218}
   m_Layer: 0
-  m_Name: IceFire
+  m_Name: IceFireSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
