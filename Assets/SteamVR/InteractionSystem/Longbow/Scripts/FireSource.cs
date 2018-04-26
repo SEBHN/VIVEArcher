@@ -6,6 +6,7 @@
 
 using UnityEngine;
 using System.Collections;
+using Assets.Scripts;
 
 namespace Valve.VR.InteractionSystem
 {
@@ -15,6 +16,7 @@ namespace Valve.VR.InteractionSystem
 		public GameObject fireParticlePrefab;
 		public bool startActive;
 		private GameObject fireObject;
+	    public FireSourceType type;
 
 		public ParticleSystem customParticles;
 
@@ -61,10 +63,27 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		void OnTriggerEnter( Collider other )
 		{
-			if ( isBurning && canSpreadFromThisSource )
+			if ( isBurning && canSpreadFromThisSource)
 			{
-				other.SendMessageUpwards( "FireExposure", SendMessageOptions.DontRequireReceiver );
-			}
+                FireSource otherSource = other.GetComponent<FireSource>();
+
+			    if (otherSource == null)
+			    {
+                    other.SendMessageUpwards("FireExposure", SendMessageOptions.DontRequireReceiver);			        	        
+			    }else if (this.type == otherSource.type)
+			    {
+			        other.SendMessageUpwards("FireExposure", SendMessageOptions.DontRequireReceiver);
+                }
+                else if (this.type != otherSource.type)
+                {
+                    if (otherSource.isBurning)
+                    {
+                        otherSource.isBurning = false;
+                        Destroy(otherSource.fireObject);
+                    }
+                }
+
+            }
 		}
 
 
