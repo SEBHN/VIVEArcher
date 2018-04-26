@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 135162111804176582}
   - component: {fileID: 54613060095064742}
   m_Layer: 0
-  m_Name: FireSourceFireTorch
+  m_Name: FireSourceTorchFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,6 +276,7 @@ MonoBehaviour:
   customParticles: {fileID: 0}
   isBurning: 0
   burnTime: 0
+  coolDownTime: 5
   ignitionDelay: 0
   ignitionSound: {fileID: 0}
   canSpreadFromThisSource: 1

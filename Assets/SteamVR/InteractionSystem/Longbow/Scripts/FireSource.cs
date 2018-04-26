@@ -23,10 +23,11 @@ namespace Valve.VR.InteractionSystem
 		public bool isBurning;
 
 		public float burnTime;
+	    public float coolDownTime;
 		public float ignitionDelay = 0;
 		private float ignitionTime;
-
-		private Hand hand;
+        private float coolDownStart;
+        private Hand hand;
 
 		public AudioSource ignitionSound;
 
@@ -47,20 +48,31 @@ namespace Valve.VR.InteractionSystem
 		{
 			if ( ( burnTime != 0 ) && ( Time.time > ( ignitionTime + burnTime ) ) && isBurning )
 			{
-				isBurning = false;
-				if ( customParticles != null )
-				{
-					customParticles.Stop();
-				}
-				else
-				{
-					Destroy( fireObject );
-				}
+			    StopBurning();
 			}
+
+		    if (coolDownTime != 0 && !canSpreadFromThisSource &&  Time.time > (coolDownStart + coolDownTime))
+		    {
+		        canSpreadFromThisSource = true;
+                StartBurning();
+		    }
 		}
 
+	    private void StopBurning()
+	    {
+	        isBurning = false;
+	        if (customParticles != null)
+	        {
+	            customParticles.Stop();
+	        }
+	        else
+	        {
+	            Destroy(fireObject);
+	        }
+	    }
 
-		//-------------------------------------------------
+
+	    //-------------------------------------------------
 		void OnTriggerEnter( Collider other )
 		{
 			if ( isBurning && canSpreadFromThisSource)
@@ -69,17 +81,23 @@ namespace Valve.VR.InteractionSystem
 
 			    if (otherSource == null)
 			    {
-                    other.SendMessageUpwards("FireExposure", SendMessageOptions.DontRequireReceiver);			        	        
-			    }else if (this.type == otherSource.type)
+                    other.SendMessageUpwards("FireExposure", SendMessageOptions.DontRequireReceiver);
+                    coolDownStart = Time.time;
+			        canSpreadFromThisSource = false;
+			        StopBurning();
+			    }
+                else if (this.type == otherSource.type)
 			    {
 			        other.SendMessageUpwards("FireExposure", SendMessageOptions.DontRequireReceiver);
+			        coolDownStart = Time.time;
+			        canSpreadFromThisSource = false;
+                    StopBurning();
                 }
                 else if (this.type != otherSource.type)
-                {
+                { 
                     if (otherSource.isBurning)
                     {
-                        otherSource.isBurning = false;
-                        Destroy(otherSource.fireObject);
+                        otherSource.StopBurning();
                     }
                 }
 
@@ -108,8 +126,8 @@ namespace Valve.VR.InteractionSystem
 			isBurning = true;
 			ignitionTime = Time.time;
 
-			// Play the fire ignition sound if there is one
-			if ( ignitionSound != null )
+            // Play the fire ignition sound if there is one
+            if ( ignitionSound != null )
 			{
 				ignitionSound.Play();
 			}

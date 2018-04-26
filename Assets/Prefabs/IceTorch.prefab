@@ -154,7 +154,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1542332272173310}
   m_LocalRotation: {x: -0.70362043, y: 0.07013009, z: -0.07013003, w: 0.7036206}
-  m_LocalPosition: {x: 0.394, y: 0.219, z: 0.031}
+  m_LocalPosition: {x: 0.54, y: -0.063, z: -0.233}
   m_LocalScale: {x: 1.0000001, y: 1.0000005, z: 1.0000005}
   m_Children:
   - {fileID: 4449677808226886}
@@ -277,6 +277,7 @@ MonoBehaviour:
   customParticles: {fileID: 0}
   isBurning: 0
   burnTime: 0
+  coolDownTime: 5
   ignitionDelay: 0
   ignitionSound: {fileID: 0}
   canSpreadFromThisSource: 1
