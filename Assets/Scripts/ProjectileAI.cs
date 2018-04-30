@@ -22,6 +22,10 @@ public class ProjectileAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (target == null)
+        {
+            Destroy(gameObject);
+        }
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
     }
