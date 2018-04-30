@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     public int hitPoints;
+    public int damage;
     private float defaultSpeed;
 
     // Use this for initialization
@@ -15,6 +16,10 @@ public class EnemyAI : MonoBehaviour
         if (hitPoints <= 0)
         {
             hitPoints = 2;
+        }
+        if(damage <= 0)
+        {
+            damage = 1;
         }
         GameObject targetObject = GameObject.FindGameObjectWithTag("Target");
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
