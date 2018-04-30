@@ -6,6 +6,7 @@
 
 using UnityEngine;
 using System.Collections;
+using Leap.Unity;
 
 namespace Valve.VR.InteractionSystem
 {
@@ -134,14 +135,29 @@ namespace Valve.VR.InteractionSystem
 				}
 
 				FireSource arrowFire = gameObject.GetComponentInChildren<FireSource>();
-				FireSource fireSourceOnTarget = collision.collider.GetComponentInParent<FireSource>();
+				
 
-				if ( arrowFire != null && arrowFire.isBurning && ( fireSourceOnTarget != null ) )
+				if ( arrowFire != null && arrowFire.isBurning)
 				{
-					if ( !hasSpreadFire )
+				    FireSource fireSourceOnTarget = collision.collider.GetComponentInParent<FireSource>();
+                    if ( !hasSpreadFire)
 					{
-						collision.collider.gameObject.SendMessageUpwards( "FireExposure", gameObject, SendMessageOptions.DontRequireReceiver );
-						hasSpreadFire = true;
+					    if (fireSourceOnTarget != null)
+					    {
+					        collision.collider.gameObject.SendMessageUpwards("FireExposure", gameObject, SendMessageOptions.DontRequireReceiver);
+                        }else if (collision.collider.tag == "Floor")
+					    {
+					        ContactPoint[] contacts = collision.contacts;
+					        foreach (var contact in contacts)
+					        {
+					            GameObject toSpawn = PrefabProvider.instance.floorFirePrefab;
+					            GameObject fireFloor = Instantiate(toSpawn, contact.point + new Vector3(0,toSpawn.transform.position.y,0), Quaternion.identity);
+                                Destroy(fireFloor, 5f);
+					        }
+					        hasSpreadFire = true;
+                        }
+
+
 					}
 				}
 				else

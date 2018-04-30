@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 16996543}
   m_Layer: 0
   m_Name: WayPart (3)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2335,7 +2335,7 @@ GameObject:
   - component: {fileID: 88571538}
   m_Layer: 0
   m_Name: WayPart (7)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6356,7 +6356,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 138193569}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 822ecc614199f804b928b3c08577c08d, type: 3}
   m_Name: 
@@ -7144,7 +7144,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-3550
+  m_Name: pb_Mesh-2916
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -7282,7 +7282,7 @@ GameObject:
   - component: {fileID: 458049564}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7580,7 +7580,7 @@ GameObject:
   - component: {fileID: 474862628}
   m_Layer: 0
   m_Name: WayPart
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8644,7 +8644,7 @@ GameObject:
   - component: {fileID: 566239791}
   m_Layer: 0
   m_Name: WayPart (1)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8722,7 +8722,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-3552
+  m_Name: pb_Mesh-2918
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -8889,7 +8889,7 @@ GameObject:
   - component: {fileID: 585362039}
   m_Layer: 0
   m_Name: WayPart (4)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17434,7 +17434,7 @@ GameObject:
   - component: {fileID: 1126089970}
   m_Layer: 0
   m_Name: WayPart (8)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19342,7 +19342,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh15282
+  m_Name: pb_Mesh14412
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -20103,7 +20103,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh36128
+  m_Name: pb_Mesh14560
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -20786,7 +20786,7 @@ GameObject:
   - component: {fileID: 1795401008}
   m_Layer: 0
   m_Name: WayPart (6)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20872,7 +20872,7 @@ GameObject:
   - component: {fileID: 1804254265}
   m_Layer: 0
   m_Name: WayPart (5)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21002,7 +21002,7 @@ GameObject:
   - component: {fileID: 1869217403}
   m_Layer: 0
   m_Name: WayPart (2)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24986,6 +24986,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b19a74ccca662704aaf46142b793693d, type: 2}
+    - target: {fileID: 1098602171541742, guid: 598fa450728d04647ad21673c6a03842, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 598fa450728d04647ad21673c6a03842, type: 2}
   m_IsPrefabParent: 0
@@ -25023,7 +25027,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh36216
+  m_Name: pb_Mesh14650
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -25307,6 +25311,50 @@ Transform:
   m_Father: {fileID: 512359936}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2076069914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2076069915}
+  - component: {fileID: 2076069916}
+  m_Layer: 0
+  m_Name: PrefabProvider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2076069915
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2076069914}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2076069916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2076069914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85620281cd749314095a5ee2a5038523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorFirePrefab: {fileID: 1277112769739472, guid: a1f92c48986cb0b4c986f741fc473649,
+    type: 2}
+  floorIcePrefab: {fileID: 1894711267966198, guid: 67e93e3157144884b989e351289fb954,
+    type: 2}
 --- !u!1 &2092579550
 GameObject:
   m_ObjectHideFlags: 0

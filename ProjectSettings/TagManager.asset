@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - projectile
   - Bow
+  - FxTemporaire
+  - Floor
   layers:
   - Default
   - TransparentFX
