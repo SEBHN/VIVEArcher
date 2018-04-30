@@ -9,12 +9,18 @@ public class FireArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        enemiesInArea.Add(other.gameObject);
+        if (other.tag == "Enemy")
+        {
+            enemiesInArea.Add(other.gameObject);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        enemiesInArea.Remove(other.gameObject);
+        if (other.tag == "Enemy")
+        {
+            enemiesInArea.Remove(other.gameObject);
+        }
     }
 
     private void Start()
