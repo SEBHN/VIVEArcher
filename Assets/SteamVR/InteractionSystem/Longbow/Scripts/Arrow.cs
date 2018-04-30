@@ -6,6 +6,7 @@
 
 using UnityEngine;
 using System.Collections;
+using Assets.Scripts;
 using Leap.Unity;
 
 namespace Valve.VR.InteractionSystem
@@ -150,9 +151,24 @@ namespace Valve.VR.InteractionSystem
 					        ContactPoint[] contacts = collision.contacts;
 					        foreach (var contact in contacts)
 					        {
-					            GameObject toSpawn = PrefabProvider.instance.floorFirePrefab;
-					            GameObject fireFloor = Instantiate(toSpawn, contact.point + new Vector3(0,toSpawn.transform.position.y,0), Quaternion.identity);
-                                Destroy(fireFloor, 5f);
+					            switch (arrowFire.type)
+					            {
+                                    case FireSourceType.FIRE:
+                                        GameObject toSpawnFire = PrefabProvider.instance.floorFirePrefab;
+                                        GameObject fireFloor = Instantiate(toSpawnFire, contact.point + new Vector3(0, toSpawnFire.transform.position.y, 0), Quaternion.identity);
+                                        Destroy(fireFloor, 5f);
+                                        break;
+                                    case FireSourceType.ICE:
+                                        GameObject toSpawnIce = PrefabProvider.instance.floorIcePrefab;
+                                        GameObject iceFloor = Instantiate(toSpawnIce, contact.point + new Vector3(0, toSpawnIce.transform.position.y, 0), Quaternion.identity);
+                                        Destroy(iceFloor, 5f);
+                                        break;
+                                }
+                                
+					          
+
+					            
+                              
 					        }
 					        hasSpreadFire = true;
                         }
