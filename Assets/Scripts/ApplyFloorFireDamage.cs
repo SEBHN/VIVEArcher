@@ -3,24 +3,8 @@ using UnityEngine;
 
 public class ApplyFloorFireDamage : MonoBehaviour
 {
-    private List<GameObject> enemiesInArea = new List<GameObject>();
-
-    // Use this for initialization
-    void Start()
+    public void ApplyDamage(int damage)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            other.gameObject.GetComponent<EnemyAI>().ReduceHitPoints(1);
-        }
+        gameObject.GetComponent<EnemyAI>().ReduceHitPoints(damage);
     }
 }

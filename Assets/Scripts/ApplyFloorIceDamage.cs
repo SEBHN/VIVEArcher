@@ -5,35 +5,20 @@ using UnityEngine.AI;
 
 public class ApplyFloorIceDamage : MonoBehaviour {
 
-    private Dictionary<GameObject, float> enemiesInArea = new Dictionary<GameObject, float>();
+    private float originalSpeed;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    public void OnDestroy()
+    public void ApplySlow(float slowFactor)
     {
-        foreach (var enemy in enemiesInArea)
-        {
-            var navMeshAgent = enemy.Key.GetComponent<NavMeshAgent>();
-            navMeshAgent.speed = enemy.Value;
-        }
+        var navMeshAgent = GetComponent<NavMeshAgent>();
+        originalSpeed = navMeshAgent.speed;
+        navMeshAgent.speed /= slowFactor;
+        Invoke("RemoveSlow", 5f);
     }
 
-    public void OnTriggerEnter(Collider other)
+    private void RemoveSlow()
     {
-        if (other.tag == "Enemy")
-        {
-           
-            var navMeshAgent = other.gameObject.GetComponent<NavMeshAgent>();
-            enemiesInArea.Add(other.gameObject, navMeshAgent.speed);
-            navMeshAgent.speed /= 1.5f;
-        }
+        var navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.speed = originalSpeed;
+        Destroy(this);
     }
 }

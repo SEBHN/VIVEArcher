@@ -45,4 +45,16 @@ public class EnemyAI : MonoBehaviour
     {
         GetComponent<NavMeshAgent>().speed = defaultSpeed;
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name.StartsWith("FloorFire"))
+        {
+            gameObject.AddComponent<ApplyFloorFireDamage>().ApplyDamage(1);
+        }
+        else if (other.gameObject.name.StartsWith("FloorIce"))
+        {
+            gameObject.AddComponent<ApplyFloorIceDamage>().ApplySlow(1.5f);
+        }
+    }
 }
