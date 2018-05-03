@@ -48,7 +48,7 @@ public class EnemyAI : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.StartsWith("FloorFire"))
+        if (other.gameObject.name.StartsWith("FloorFire") || other.gameObject.name.StartsWith("TinyFire"))
         {
             gameObject.AddComponent<ApplyFloorFireDamage>().ApplyDamage(1);
         }
