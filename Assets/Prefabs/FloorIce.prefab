@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23363015112333822}
   m_Layer: 0
   m_Name: FloorIce
-  m_TagString: Untagged
+  m_TagString: Ice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 1894711267966198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.78, y: 0.05, z: -11.41}
-  m_LocalScale: {x: 1, y: 0.058934323, z: 1}
+  m_LocalScale: {x: 1.8, y: 0.058934323, z: 1.8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

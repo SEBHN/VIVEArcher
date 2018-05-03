@@ -9,6 +9,8 @@ public class PrefabProvider : MonoBehaviour
 
     public GameObject floorFirePrefab;
     public GameObject floorIcePrefab;
+    public GameObject bigFirePrefab;
+    public GameObject bigIcePrefab;
 
     void Awake()
     {

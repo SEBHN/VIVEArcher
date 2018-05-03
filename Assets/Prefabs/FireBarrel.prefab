@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3afb33bad11d7f4cb859e24e1d9a0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireArePrefab: {fileID: 1277112769739472, guid: a1f92c48986cb0b4c986f741fc473649,
+  fireArePrefab: {fileID: 1125542797327288, guid: 08833a8282d872841bb422f03c5c85b4,
     type: 2}
 --- !u!136 &136390976434537212
 CapsuleCollider:

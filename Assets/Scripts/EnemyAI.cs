@@ -48,13 +48,13 @@ public class EnemyAI : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.StartsWith("FloorFire") || other.gameObject.name.StartsWith("TinyFire"))
+        if (other.gameObject.name.StartsWith("FloorFire") || other.gameObject.tag == "Fire")
         {
             gameObject.AddComponent<ApplyFloorFireDamage>().ApplyDamage(1);
         }
-        else if (other.gameObject.name.StartsWith("FloorIce"))
+        else if (other.gameObject.name.StartsWith("FloorIce") || other.gameObject.tag == "Ice")
         {
-            gameObject.AddComponent<ApplyFloorIceDamage>().ApplySlow(1.5f);
+            gameObject.AddComponent<ApplyFloorIceDamage>().ApplySlow(1.7f);
         }
     }
 }

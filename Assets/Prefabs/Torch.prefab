@@ -270,7 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86ab2e727cd09f43849955c5b35f490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireParticlePrefab: {fileID: 105996, guid: 9471d2206e57ca246a4bf982f3c29c8f, type: 2}
+  fireParticlePrefab: {fileID: 1484124126775530, guid: b23dd3d8c600e864898a1bf4d66c7782,
+    type: 2}
   startActive: 1
   type: 0
   customParticles: {fileID: 0}

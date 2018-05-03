@@ -10,6 +10,8 @@ TagManager:
   - Bow
   - FxTemporaire
   - Floor
+  - Fire
+  - Ice
   layers:
   - Default
   - TransparentFX

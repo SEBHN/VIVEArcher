@@ -154,7 +154,7 @@ namespace Valve.VR.InteractionSystem
 					            switch (arrowFire.type)
 					            {
                                     case FireSourceType.FIRE:
-                                        GameObject toSpawnFire = PrefabProvider.instance.floorFirePrefab;
+                                        GameObject toSpawnFire = PrefabProvider.instance.bigFirePrefab;
                                         GameObject fireFloor = Instantiate(toSpawnFire, contact.point + new Vector3(0, toSpawnFire.transform.position.y, 0), Quaternion.identity);
                                         Destroy(fireFloor, 5f);
                                         break;
