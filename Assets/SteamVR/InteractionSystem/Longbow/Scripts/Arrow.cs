@@ -186,7 +186,7 @@ namespace Valve.VR.InteractionSystem
 						gameObject.SendMessage( "HasAppliedDamage", SendMessageOptions.DontRequireReceiver );
 					    if (collision.gameObject.tag == "Enemy")
 					    {
-					        Destroy(collision.gameObject);
+					        collision.gameObject.GetComponent<EnemyAI>().ReduceHitPoints(1);
 					    }
                     }
 				}
