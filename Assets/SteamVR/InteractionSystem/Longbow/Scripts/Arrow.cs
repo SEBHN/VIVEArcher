@@ -146,7 +146,7 @@ namespace Valve.VR.InteractionSystem
 					    if (fireSourceOnTarget != null)
 					    {
 					        collision.collider.gameObject.SendMessageUpwards("FireExposure", gameObject, SendMessageOptions.DontRequireReceiver);
-                        }else if (collision.collider.tag == "Floor")
+                        }else if (collision.collider.tag == "Floor" || collision.collider.tag == "Enemy")
 					    {
 					        ContactPoint[] contacts = collision.contacts;
 					        foreach (var contact in contacts)
@@ -156,22 +156,18 @@ namespace Valve.VR.InteractionSystem
 					                case FireSourceType.FIRE:
 					                    GameObject toSpawnFire = PrefabProvider.instance.bigFirePrefab;
 					                    GameObject fireFloor = Instantiate(toSpawnFire,
-					                        contact.point + new Vector3(0, toSpawnFire.transform.position.y, 0), Quaternion.identity);
+					                        new Vector3(contact.point.x, 0.02f, contact.point.z) + new Vector3(0, toSpawnFire.transform.position.y, 0), Quaternion.identity);
 					                    Destroy(fireFloor, 5f);
 					                    break;
 					                case FireSourceType.ICE:
 					                    GameObject toSpawnIce = PrefabProvider.instance.floorIcePrefab;
 					                    GameObject iceFloor = Instantiate(toSpawnIce,
-					                        contact.point + new Vector3(0, toSpawnIce.transform.position.y, 0), Quaternion.identity);
+					                        new Vector3(contact.point.x, 0.02f, contact.point.z) + new Vector3(0, toSpawnIce.transform.position.y, 0), Quaternion.identity);
 					                    Destroy(iceFloor, 5f);
 					                    break;
 					            }
 					        }
 					    }
-					    else if (collision.collider.tag == "Enemy")
-					    {
-					        collision.gameObject.GetComponent<EnemyAI>().ReduceHitPoints(2);
-                        }
 					    hasSpreadFire = true;
 
 
