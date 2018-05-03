@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ecc5b279d23f34abacae30eb98885d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 2
+  hitPoints: 10
   damage: 2
 --- !u!136 &136844147662221690
 CapsuleCollider:

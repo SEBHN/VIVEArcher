@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using NUnit.Framework.Constraints;
 using UnityEngine;
 
-public class ApplyFloorFireDamage : MonoBehaviour
+public class OnFire : MonoBehaviour
 {
 
     public int burnTime = 5;
@@ -14,23 +14,27 @@ public class ApplyFloorFireDamage : MonoBehaviour
 
     public void Start()
     {
-        Destroy(this, burnTime);
+        Invoke("DisableBurning", burnTime);
         StartCoroutine(DamageEach(1.0f));
-    }
-
-    public void OnDestroy()
-    {
-        if (fire != null)
-        {
-            Destroy(fire);
-        }
     }
 
 
     public void SetBurning(bool burn)
     {
         burning = burn;
-        fire = Instantiate(PrefabProvider.instance.bigFirePrefab, transform);
+        if (burning)
+        {
+            fire = Instantiate(PrefabProvider.instance.bigFirePrefab, transform);
+        }else if (fire != null)
+        {
+            Destroy(fire);
+            Destroy(this);
+        }
+    }
+
+    private void DisableBurning()
+    {
+        SetBurning(false);
     }
 
     IEnumerator DamageEach(float waitTime)

@@ -50,10 +50,10 @@ public class EnemyAI : MonoBehaviour
     {
         if (other.gameObject.name.StartsWith("FloorFire") || other.gameObject.tag == "Fire")
         {
-            ApplyFloorFireDamage fireFloor = gameObject.GetComponent<ApplyFloorFireDamage>();
+            OnFire fireFloor = gameObject.GetComponent<OnFire>();
             if (fireFloor == null)
             {
-                fireFloor = gameObject.AddComponent<ApplyFloorFireDamage>();
+                fireFloor = gameObject.AddComponent<OnFire>();
                 fireFloor.SetBurning(true);
             }
         }
